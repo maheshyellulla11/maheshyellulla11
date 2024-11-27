@@ -1,42 +1,47 @@
-const inputValue = document.getElementById("user-input");
-
-const calculate = document
-  .querySelectorAll(".operations")
-  .forEach(function (item) {
-  item.addEventListener("click", function (e) {
-    let lastValue = inputValue.innerText.substring(
-      inputValue.innerText.length, 
-      inputValue.innerText.length - 1
-    );
-
-if (!isNaN(lastValue) && e.target.innerHTML === "=") {
-    inputValue.innerText = eval(inputValue.innerText);
-} else if (e.target.innerHTML === "AC") {
-    inputValue.innerText = 0;
-} else if (e.target.innerHTML === "DEL") {
-    inputValue.innerText = inputValue.innerText.substring(
-      0,
-      inputValue.innerText.length - 1
-    );
-
-    if (inputValue.innerText.length == 0) {
-        inputValue.innerText = 0;
-    }
-} else {
-    if (!isNaN(lastValue)) {
-        inputValue.innerText += e.target.innerHTML;
-      }
-   }
-  });
-}); 
-    
-const number = document.querySelectorAll(".numbers")
-.forEach(function (item) {
-  item.addEventListener("click", function (e) {
-    if (inputValue.innerText === "0") {
-      inputValue.innerText = "";
-    }
-    inputValue.innerText += e.target.innerHTML.trim();
-    });
-  });
+function validateForm() {
+  const fullname = document.getElementById("fullname").value;
+  const email = document.getElementById("email").value;
+  const PhoneNo = document.getElementById("PhoneNo").value;
+  var password = document.getElementById("password"),
+  confirm_password = document.getElementById("confirm_password");
   
+  const fullnameError = document.getElementById("fullname-error");
+  
+  const emailError = document.getElementById(
+      "email-error"
+  );
+  const PhoneNoError = document.getElementById(
+      "PhoneNo-error"
+  );
+  const passwordError = document.getElementById(
+      "password-error"
+      );
+  fullnameError.textContent = "";
+  emailError.textContent = "";
+  PhoneNoError.textContent = "";
+  passwordError.textContent = "";
+  let isValid = true;
+
+  if (fullname === "" || /\d/.test(fullname)) {
+      nameError.textContent =
+          "Please enter your name properly.";
+      isValid = false;
+  }
+  if (email === "" || !email.includes("@")) {
+      emailError.textContent =
+          "Please enter a valid email address.";
+      isValid = false;
+  }
+  if (PhoneNo === "" || /\d/var n=new Number(value)) {
+    PhoneNoError.textContent =
+        "Please enter your PhoneNo properly.";
+    isValid = false;
+  }
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;

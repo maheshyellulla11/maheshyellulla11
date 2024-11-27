@@ -1,74 +1,49 @@
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Helvetica Neue", sans-serif;
-  box-sizing: border-box;
-}
-
 body {
-  background-image: image();
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    font-family: Arial, sans-serif;
+    background: grey;
 }
-
-.container {
-  background: #000000;
-  padding: 25px;
-  width: 350px;
-  border-radius: 10px;
+h1 {
+    text-align: center;
+    color: black;
 }
-.calc-text {
-  margin-bottom: 20px;
-  padding-left: 5px;
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgb(34,193,195);
+    background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(127,181,197,1) 55%, rgba(253,187,45,1) 100%);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.calc-text p {
-  width: 100%;
-  font-size: 3.5rem;
-  text-align: end;
-  background: transparent;
-  color: #fff;
-  border: none;
-  outline: none;
-  word-wrap: break-word;
-  word-break: break-all;
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
 }
-button {
-  background: #333333;
-  color: #fff;
-  font-size: 1.5rem;
-  border: none;
-  border-radius: 70%;
-  cursor: pointer;
-  height: 65px;
-  width: 65px;
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
 }
-
-button:active,
-button:focus {
-  filter: brightness(120%);
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="checkbox"]:hover {
+    background-color: red;
 }
-
-.calc-keys {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-row-gap: 15px;
-  grid-column-gap: 10px;
-}
-
-.key-zero {
-  grid-column: span 2;
-  width: 100%;
-  border-radius: 30px;
-}
-
-.key-operate {
-  background: #ff9501;
-}
-
-.key-others {
-  background: #a6a6a6;
-  color: #000000;
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
 }
